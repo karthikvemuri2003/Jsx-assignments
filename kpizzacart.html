@@ -1,0 +1,125 @@
+<html></html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="pizza.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            var Kar=function kkk(){
+                var [k,setK]=React.useState([
+  {
+    "name": "Margherita",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Aqy7kjjQbxmABSduzIg3uyh_TOOS0_GPGA&s",
+    "address": "123 Pizza St, Pizza Town",
+    "price": 12.99
+  },
+  {
+    "name": "Pepperoni",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLpyUBeuso0JIz0uvwEUW8ieyBzNsnSe4GiA&s",
+    "address": "456 Pizza Ave, Pizza City",
+    "price": 14.99
+  },
+  {
+    "name": "BBQ Chicken",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkyeDsD2sRXfr0Aq1OD-YBUrJMLo7w4XeqIw&s",
+    "address": "789 Pizza Blvd, Pizza Village",
+    "price": 15.99
+  },
+  {
+    "name": "Vegetarian",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSraTiPseovRzS6PfUaneIyEJlovju0YAUnVQ&s",
+    "address": "321 Pizza Rd, Pizza County",
+    "price": 11.99
+  },
+  {
+    "name": "Hawaiian",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLah-8FqP3JSNbjvPm1lPqMrkz5Q2JaY2vBQ&s",
+    "address": "654 Pizza Pkwy, Pizza State",
+    "price": 13.99
+  },
+  {
+    "name": "Meat Lovers",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPRw6M1vP-gFj8h4qPQXaYTM6OmqS_YBhunQ&s",
+    "address": "987 Meat St, Carnivore City",
+    "price": 16.99
+  },
+  {
+    "name": "Four Cheese",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaT9PjpUXf7QcWeBCEYXV7LmOAY2OjU6tdjg&s",
+    "address": "852 Cheese Blvd, Dairyland",
+    "price": 15.49
+  },
+  {
+    "name": "Buffalo Chicken",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfy7shsMY8TH1FSTWMvuJok5W2AYa6bel7uw&s",
+    "address": "741 Spice Ln, Flavor Town",
+    "price": 14.49
+  },
+  {
+    "name": "Pesto Veggie",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFb-QOETAw_2smnhPtCqsh8A1KTeBnpYEBTQ&s",
+    "address": "963 Green Way, Herb Garden",
+    "price": 13.49
+  },
+  {
+    "name": "Seafood Delight",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFb-QOETAw_2smnhPtCqsh8A1KTeBnpYEBTQ&s",
+    "address": "159 Ocean Ave, Sea Town",
+    "price": 18.99
+  }
+]
+);
+              var [a,setA]=React.useState([])
+                function add(pi){
+                 a.push(pi)
+                 setA([...a])
+                }
+                return (<div style={{border:'2px solid',flexWrap:'wrap'}}>     
+                    <ul style={{display:"flex",flexWrap:'wrap',border:'2px solid'}}>
+                      {
+                        k.map((pizza,indx)=>{
+                        return (<div style={{width:"300px", border:'2px solid red'}} >
+                              <li>name:{pizza.name}</li>
+                              <li>address:{pizza.address}</li>
+                              <li>price:{pizza.price}</li>
+                              <img src={pizza.image} alt="" width="100px"/>
+                              <button style={{color:"green",backgroundColor:"yellow"}} onClick={(()=>{add(pizza)})}>add</button>
+                              <br/>
+                            </div>
+                        )
+                    })}</ul>
+                    <Kart c={a}></Kart>
+                    </div>)
+            }
+            function Kart(u){
+              var [to,setTo]=React.useState(0)
+              var [x,setX]=React.useState(0)
+              return(
+                <div> 
+                  <h1>cart</h1>
+                  {
+               
+                 u.c.map((i)=>{
+                  
+                  return  <div>
+                    <h1>{i.name}</h1>
+                    <h1>{i.price}</h1>
+                    <img src={i.image} alt="" width="100px"/>
+                    {to=to+i.price}
+                    {x=x+1}
+                    </div>
+                 })
+                }
+                  <h1>{"total "+to}</h1>
+                  <h1>item:{x}</h1>
+                  </div>
+              )
+
+            }
+            ReactDOM.render(<Kar/>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

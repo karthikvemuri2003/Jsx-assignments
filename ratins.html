@@ -1,0 +1,58 @@
+<html></html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function Rating(prop){
+                var [rating,setRating]=React.useState(0);
+                function vk(a){
+                    setRating(a)
+                }
+                return(
+                    <div>
+                        <h1>{prop.feature}Rating</h1>
+                        <h1>{rating}/5</h1>
+                        <div>
+                            <i class={rating>=1?"bi bi-star-fill":"bi bi-star"} onClick={()=>{vk(1)}} style={{color:"green",backgroundColor:"yellow"}}></i>
+                            <i class={rating>=2?"bi bi-star-fill":"bi bi-star"} onClick={()=>{vk(2)}} style={{color:"green",backgroundColor:"yellow"}}></i>
+                            <i class={rating>=3?"bi bi-star-fill":"bi bi-star"} onClick={()=>{vk(3)}} style={{color:"green",backgroundColor:"yellow"}}></i>
+                            <i class={rating>=4?"bi bi-star-fill":"bi bi-star"} onClick={()=>{vk(4)}} style={{color:"green",backgroundColor:"yellow"}}></i>
+                            <i class={rating>=5?"bi bi-star-fill":"bi bi-star"} onClick={()=>{vk(5)}} style={{color:"green",backgroundColor:"yellow"}}></i>
+                            </div>
+                        </div>
+                )
+            }
+            function Fdack(){
+                var [a,setA]=React.useState(0)
+                var [u,setU]=React.useState({
+                    display:0,
+                    camera:0,
+                    ram:0,
+                    os:0,
+                    pric:0
+                })
+                function karthik(r){
+                    setU({...u,[r.f]:r.v})
+                }
+                return(
+                    <div>
+                        <Rating feature={"display"} karthik={karthik}/>
+                        <Rating feature={"camera"} karthik={karthik}/>
+                        <Rating feature={"ram"} karthik={karthik}/>
+                        <Rating feature={"os"} karthik={karthik}/>
+                        <Rating feature={"pric"} karthik={karthik}/>
+                        <h1>avg:{}</h1>
+                        </div>
+                )
+            }
+            ReactDOM.render(<Fdack/>,document.getElementById("d1"));
+        </script>
+    </body>
+</html>
